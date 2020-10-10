@@ -1,5 +1,0 @@
-Each line of this output includes a summary for a given source file, including the number of lines instrumented, 
-the number of lines executed, the percentage of lines executed, and a summary of the line numbers that were not executed. 
-To improve clarity, gcovr uses an aggressive approach to grouping uncovered lines and will combine uncovered lines separated
-by “non-code” lines (blank, freestanding braces, and single-line comments) into a single region. As a result, the number
-of lines listed in the “Missing” list may be greater than the difference of the “Lines” and “Exec” columns.
