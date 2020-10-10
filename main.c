@@ -41,7 +41,7 @@ int main(void) {
         symbol = fgetc(f);
     }
     if (fclose(f) == EOF) 
-        printf(“The file did not close.\n”);
+        printf("The file did not close.\n");
 
     //Sorting
     BubbleSort(symbols);
