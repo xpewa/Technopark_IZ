@@ -26,20 +26,22 @@ int main(void) {
         symbols[i].code = i;
     }
 
-    //Opening and reading from a file
+    //Open file, read from a file, close file
     FILE *f;
     f = fopen("text.txt", "r");
     if (NULL == f) {
-        printf("The file did not open.");
+        printf("The file did not open.\n");
         return -1;
     }
     int symbol;
     symbol = fgetc(f);
     while (symbol != EOF) {
-        if ((symbol>=65 && symbol<=90) || (symbol>=97 && symbol<=122))
+        if ((symbol>=65 && symbol<=90) || (symbol>=97 && symbol<=122))//'A'-'Z', 'a'-'z'
             symbols[symbol].count += 1;
         symbol = fgetc(f);
     }
+    if (fclose(f) == EOF) 
+        printf(“The file did not close.\n”);
 
     //Sorting
     BubbleSort(symbols);
@@ -49,7 +51,7 @@ int main(void) {
     for (int i = 0; i < 256; ++i)
         if (symbols[i].count != 0)
             printf("%c (%d) \n", (char)symbols[i].code, symbols[i].count);
-    printf("- most popular char.");
+    printf("- most popular char.\n");
             
     return 0;
 }
