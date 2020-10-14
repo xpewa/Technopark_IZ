@@ -1,25 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "functions.h"
 
-typedef struct t_symbol {
-    int code;
-    int count;
-} t_symbol;
+void InsertionSort(t_symbol* mas, int Size) {
+    for (int i = 1; i < Size; ++i) {
+        t_symbol temp = mas[i];
+        int j = i-1;
+        for (; j>=0 && temp.count < mas[j].count; --j)
+            mas[j+1] = mas[j];
+        mas[j+1] = temp;
+    }
+}
 
-void BubbleSort(t_symbol* mas) {
-    for (int i = 0; i + 1 < 256; ++i)
-        for (int j = 0; j + 1 < 256; ++j)
-            if (mas[j + 1].count < mas[j].count) {
-                t_symbol tmp = mas[j];
-                mas[j] = mas[j+1];
-                mas[j+1] = tmp;
-            }
+void ReadFile(FILE* fo, t_symbol* mas) {
+    int symbol;
+    symbol = fgetc(fo);
+    while (symbol != EOF) {
+        if ((symbol>=65 && symbol<=90) || (symbol>=97 && symbol<=122))//'A'-'Z', 'a'-'z'
+            mas[symbol].count += 1;
+        symbol = fgetc(fo);
+    }
 }
 
 int main(void) {
-    system("cls");
-    system("color 70");
-
     t_symbol symbols[256];
     for (int i = 0; i < 256; ++i) {
         symbols[i].count = 0;
@@ -33,18 +35,15 @@ int main(void) {
         printf("The file did not open.\n");
         return -1;
     }
-    int symbol;
-    symbol = fgetc(f);
-    while (symbol != EOF) {
-        if ((symbol>=65 && symbol<=90) || (symbol>=97 && symbol<=122))//'A'-'Z', 'a'-'z'
-            symbols[symbol].count += 1;
-        symbol = fgetc(f);
-    }
-    if (fclose(f) == EOF) 
+
+    //Fill array
+    ReadFile(f, symbols);
+
+    if (fclose(f) == EOF)
         printf("The file did not close.\n");
 
     //Sorting
-    BubbleSort(symbols);
+    InsertionSort(symbols, 256);
 
     //Output on display
     printf("Most unpopular char - \n");
@@ -52,6 +51,5 @@ int main(void) {
         if (symbols[i].count != 0)
             printf("%c (%d) \n", (char)symbols[i].code, symbols[i].count);
     printf("- most popular char.\n");
-            
     return 0;
 }

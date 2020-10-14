@@ -1,0 +1,156 @@
+        -:    0:Source:/mnt/c/Users/xpewa/CLionProjects/Technopark-IZ/IZ-1/Google_tests/TestInsertionSort.cpp
+        -:    0:Graph:/mnt/c/Users/xpewa/CLionProjects/Technopark-IZ/IZ-1/cmake-build-debug-coverage/Google_tests/CMakeFiles/Tests.dir/TestInsertionSort.cpp.gcno
+        -:    0:Data:/mnt/c/Users/xpewa/CLionProjects/Technopark-IZ/IZ-1/cmake-build-debug-coverage/Google_tests/CMakeFiles/Tests.dir/TestInsertionSort.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <gtest/gtest.h>
+        -:    2:#include "../functions.h"
+        -:    3:
+        2:    4:void InsertionSort(t_symbol* mas, int Size) {
+        8:    5:    for (int i = 1; i < Size; ++i) {
+        2:    5-block  0
+        8:    5-block  1
+        6:    6:        t_symbol temp = mas[i];
+        6:    7:        int j = i-1;
+        6:    7-block  0
+       10:    8:        for (; j>=0 && temp.count < mas[j].count; --j)
+       10:    8-block  0
+        9:    8-block  1
+        4:    9:            mas[j+1] = mas[j];
+        4:    9-block  0
+        6:   10:        mas[j+1] = temp;
+        6:   10-block  0
+        -:   11:    }
+        2:   12:}
+        -:   13:
+        4:   14:TEST(test001, InsertionSort) {
+        -:   15:    t_symbol a;
+        1:   16:    a.count = 3;
+        -:   17:    t_symbol b;
+        1:   18:    b.count = 0;
+        -:   19:    t_symbol c;
+        1:   20:    c.count = 0;
+        -:   21:    t_symbol d;
+        1:   22:    d.count = 1;
+        -:   23:    t_symbol e;
+        1:   24:    e.count = 2;
+        1:   25:    t_symbol mas[] = {a, b, c, d, e};
+        -:   26:
+        1:   27:    InsertionSort(mas, 5);
+        -:   28:
+       1*:   29:    ASSERT_EQ(mas[0].count, 0);
+       1*:   30:    ASSERT_EQ(mas[1].count, 0);
+       1*:   31:    ASSERT_EQ(mas[2].count, 1);
+       1*:   32:    ASSERT_EQ(mas[3].count, 2);
+       1*:   33:    ASSERT_EQ(mas[4].count, 3);
+        -:   34:}
+------------------
+_ZN26test001_InsertionSort_TestC2Ev:
+        1:   14:TEST(test001, InsertionSort) {
+        1:   14-block  0
+------------------
+_ZN26test001_InsertionSort_TestD0Ev:
+        1:   14:TEST(test001, InsertionSort) {
+        1:   14-block  0
+------------------
+_ZN26test001_InsertionSort_TestD2Ev:
+        1:   14:TEST(test001, InsertionSort) {
+        1:   14-block  0
+------------------
+_ZN26test001_InsertionSort_Test8TestBodyEv:
+        1:   14:TEST(test001, InsertionSort) {
+        -:   15:    t_symbol a;
+        1:   16:    a.count = 3;
+        -:   17:    t_symbol b;
+        1:   18:    b.count = 0;
+        -:   19:    t_symbol c;
+        1:   20:    c.count = 0;
+        -:   21:    t_symbol d;
+        1:   22:    d.count = 1;
+        -:   23:    t_symbol e;
+        1:   24:    e.count = 2;
+        1:   25:    t_symbol mas[] = {a, b, c, d, e};
+        -:   26:
+        1:   27:    InsertionSort(mas, 5);
+        1:   27-block  0
+        -:   28:
+       1*:   29:    ASSERT_EQ(mas[0].count, 0);
+        1:   29-block  0
+    %%%%%:   29-block  1
+    %%%%%:   29-block  2
+    %%%%%:   29-block  3
+    %%%%%:   29-block  4
+    $$$$$:   29-block  5
+    $$$$$:   29-block  6
+    $$$$$:   29-block  7
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+       1*:   30:    ASSERT_EQ(mas[1].count, 0);
+        1:   30-block  0
+        1:   30-block  1
+    %%%%%:   30-block  2
+    %%%%%:   30-block  3
+    %%%%%:   30-block  4
+    %%%%%:   30-block  5
+    $$$$$:   30-block  6
+    $$$$$:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+    $$$$$:   30-block 10
+    $$$$$:   30-block 11
+       1*:   31:    ASSERT_EQ(mas[2].count, 1);
+        1:   31-block  0
+        1:   31-block  1
+    %%%%%:   31-block  2
+    %%%%%:   31-block  3
+    %%%%%:   31-block  4
+    %%%%%:   31-block  5
+    $$$$$:   31-block  6
+    $$$$$:   31-block  7
+    $$$$$:   31-block  8
+    $$$$$:   31-block  9
+    $$$$$:   31-block 10
+    $$$$$:   31-block 11
+       1*:   32:    ASSERT_EQ(mas[3].count, 2);
+        1:   32-block  0
+        1:   32-block  1
+    %%%%%:   32-block  2
+    %%%%%:   32-block  3
+    %%%%%:   32-block  4
+    %%%%%:   32-block  5
+    $$$$$:   32-block  6
+    $$$$$:   32-block  7
+    $$$$$:   32-block  8
+    $$$$$:   32-block  9
+    $$$$$:   32-block 10
+    $$$$$:   32-block 11
+       1*:   33:    ASSERT_EQ(mas[4].count, 3);
+        1:   33-block  0
+        1:   33-block  1
+    %%%%%:   33-block  2
+    %%%%%:   33-block  3
+    %%%%%:   33-block  4
+    %%%%%:   33-block  5
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+    $$$$$:   33-block  8
+    $$$$$:   33-block  9
+    $$$$$:   33-block 10
+    $$$$$:   33-block 11
+        -:   34:}
+------------------
+        4:   35:TEST(test002, InsertionSort) {
+        -:   36:    t_symbol a;
+        1:   37:    a.count = 0;
+        -:   38:    t_symbol b;
+        1:   39:    b.count = 0;
+        -:   40:    t_symbol c;
+        1:   41:    c.count = 0;
+        1:   42:    t_symbol mas[] = {a, b, c};
+        -:   43:
+        1:   44:    InsertionSort(mas, 3);
+        -:   45:
+       1*:   46:    ASSERT_EQ(mas[0].count, 0);
+       1*:   47:    ASSERT_EQ(mas[1].count, 0);
+       1*:   48:    ASSERT_EQ(mas[2].count, 0);
+        -:   49:}

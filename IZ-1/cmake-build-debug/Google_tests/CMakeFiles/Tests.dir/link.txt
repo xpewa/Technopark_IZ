@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Tests.dir/TestInsertionSort.cpp.o  -o Tests  ../lib/libgtest_maind.a ../libIZ-1.a ../lib/libgtestd.a -lpthread 
