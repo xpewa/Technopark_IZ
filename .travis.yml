@@ -21,14 +21,19 @@ install:
   - sudo apt-get install cmake
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
 
+before_script:
+  - cmake -DCMAKE_BUILD_TYPE=Debug -DWRAP_VALGRIND=ON .
+        
 script:
   - cd IZ-1
   - mkdir build
   - cd build
   - cmake --build
+  - cd -
+  - cd Google_tests
   - ctest --output-on-failure
+  - cd -
   - gcov main.c
-  - valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --leak-resolution=med  --track-origins=yes chmod a+x main.c
   - cppcheck --quiet --error-exitcode=1 .
 
 after_success:
