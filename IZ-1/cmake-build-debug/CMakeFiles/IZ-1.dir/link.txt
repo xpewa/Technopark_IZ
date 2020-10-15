@@ -1,2 +1,0 @@
-/usr/bin/ar qc libIZ-1.a  CMakeFiles/IZ-1.dir/main.c.o
-/usr/bin/ranlib libIZ-1.a

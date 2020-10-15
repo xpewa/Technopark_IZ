@@ -1,1 +1,0 @@
-/usr/bin/c++  --coverage -g   CMakeFiles/Google_Tests_run.dir/ReadFileTest.cpp.o CMakeFiles/Google_Tests_run.dir/BubbleSortTest.cpp.o  -o Google_Tests_run  -lIZ-1 ../lib/libgtestd.a ../lib/libgtest_maind.a ../lib/libgtestd.a -lpthread 

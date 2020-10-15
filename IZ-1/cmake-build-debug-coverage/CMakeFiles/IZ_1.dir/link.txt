@@ -1,1 +1,0 @@
-/usr/bin/cc --coverage -g   CMakeFiles/IZ_1.dir/main.c.o  -o IZ_1 
