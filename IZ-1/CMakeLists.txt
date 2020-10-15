@@ -5,7 +5,6 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 
 enable_testing()
-
 add_subdirectory(Google_tests)
 add_subdirectory(Google_tests/lib/googletest-master)
 include_directories(Google_tests/lib/googletest-master/googletest/include)
