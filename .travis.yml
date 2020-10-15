@@ -21,7 +21,9 @@ install:
   - sudo apt-get install valgrind
   - sudo apt-get install cmake
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
-        
+  - cd /usr/bin/ld
+  - sudo apt-get install libgtest-dev
+
 script:
   - cd IZ-1
   - mkdir build
