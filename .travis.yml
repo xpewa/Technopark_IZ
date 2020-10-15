@@ -22,7 +22,7 @@ install:
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
 
 script:
-  -cd IZ-1
+  - cd IZ-1
   - mkdir build
   - cd build
   - cmake --build
