@@ -15,6 +15,7 @@ env:
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
+  - sudo apt-get install libgtest-dev
   - sudo pip install codecov
   - sudo apt-get install -qq cppcheck
   - sudo apt-get install valgrind
