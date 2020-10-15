@@ -15,7 +15,12 @@ env:
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-  - sourse IZ-1/CI/Travis/install.sh
+  - sudo pip install codecov
+  - sudo apt-get install -qq cppcheck
+  - sudo apt-get install valgrind
+  - sudo apt-get install cmake
+  - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
+  - sudo cmake -DBUILD_SHARED_LIBS=ON
 
 script:
   - mkdir build
