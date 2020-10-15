@@ -28,7 +28,8 @@ script:
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - gcov main.c
-  - valgrind --tool=memcheck --leak-check=yes ./Google_tests/Tests
+  - cd Google_tests
+  - valgrind --tool=memcheck --leak-check=yes ./Tests
   - cd ..
   - cppcheck --enable=warning,performance,information *.c
 
