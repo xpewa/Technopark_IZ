@@ -22,6 +22,7 @@ install:
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
 
 before_script:
+  - cd IZ-1
   - cmake -DCMAKE_BUILD_TYPE=Debug -DWRAP_VALGRIND=ON .
         
 script:
