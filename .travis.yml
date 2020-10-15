@@ -28,10 +28,9 @@ script:
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - cd -
-  - cd Google_tests
-  - ctest --output-on-failure
-  - cd -
   - gcov main.c
+  - valgrind --track-origins=yes --leak-check=full ./Google_tests
+  - cppcheck --enable=warning,performance,portability,style --language=c ./IZ-1
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
