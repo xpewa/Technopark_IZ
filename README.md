@@ -1,4 +1,4 @@
-# Technopark_IZ[![Build Status](https://travis-ci.org/xpewa/Technopark_IZ.svg?branch=main)](https://travis-ci.org/xpewa/Technopark_IZ)
+# Technopark_IZ  [![Build Status](https://travis-ci.org/xpewa/Technopark_IZ.svg?branch=main)](https://travis-ci.org/xpewa/Technopark_IZ)
 
 IZ-1
 Вариант #72
