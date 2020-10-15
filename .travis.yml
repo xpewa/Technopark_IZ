@@ -20,12 +20,10 @@ install:
   - sudo apt-get install valgrind
   - sudo apt-get install cmake
   - sudo wget https://github.com/google/googletest/archive/release-1.7.0.tar.gz
-  - sudo cmake -DBUILD_SHARED_LIBS=ON
 
 script:
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build
   - ctest --output-on-failure
   - gcov main.c
