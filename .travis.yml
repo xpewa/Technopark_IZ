@@ -26,8 +26,8 @@ script:
   - cd IZ-1
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake -DBUILD_SHARED_LIBS=ON .
+  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - gcov main.c
   - cd Google_tests
