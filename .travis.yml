@@ -29,8 +29,8 @@ script:
   - cmake --build .
   - cd -
   - gcov main.c
-  - valgrind --track-origins=yes --leak-check=full ./Google_tests
-  - cppcheck --enable=warning,performance,portability,style --language=c ./IZ-1
+  - valgrind --tool=memcheck --leak-check=yes ./Google_tests/Tests
+  - cppcheck --enable=warning,performance,portability,style --language=c ./IZ-1/main.c
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
