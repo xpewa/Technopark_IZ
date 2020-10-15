@@ -27,10 +27,10 @@ script:
   - cd build
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
-  - cd -
   - gcov main.c
   - valgrind --tool=memcheck --leak-check=yes ./Google_tests/Tests
-  - cppcheck --enable=warning,performance,portability,style --language=c ./IZ-1/main.c
+  - cd ..
+  - cppcheck --enable=warning,performance,information *.c
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
