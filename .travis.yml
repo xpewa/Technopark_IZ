@@ -1,5 +1,4 @@
 dist: trusty
-sudo: required
 
 language: c
 
@@ -16,8 +15,7 @@ env:
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-  - sourse
-    CI/Travis/install.sh
+  - sourse IZ-1/CI/Travis/install.sh
 
 script:
   - mkdir build
@@ -31,3 +29,4 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  
