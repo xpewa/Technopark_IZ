@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.9)
 project(IZ-1 LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 99)
