@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../functions.h"
 
-void InsertionSort(t_symbol* mas, int Size) {
+void insertion_sort(t_symbol* mas, const int Size) {
     for (int i = 1; i < Size; ++i) {
         t_symbol temp = mas[i];
         int j = i-1;
@@ -24,7 +24,7 @@ TEST(test001, InsertionSort) {
     e.count = 2;
     t_symbol mas[] = {a, b, c, d, e};
 
-    InsertionSort(mas, 5);
+    insertion_sort(mas, 5);
 
     ASSERT_EQ(mas[0].count, 0);
     ASSERT_EQ(mas[1].count, 0);
@@ -41,7 +41,7 @@ TEST(test002, InsertionSort) {
     c.count = 0;
     t_symbol mas[] = {a, b, c};
 
-    InsertionSort(mas, 3);
+    insertion_sort(mas, 3);
 
     ASSERT_EQ(mas[0].count, 0);
     ASSERT_EQ(mas[1].count, 0);

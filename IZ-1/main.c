@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "functions.h"
 
-void InsertionSort(t_symbol* mas, int Size) {
+void insertion_sort(t_symbol* mas, const int Size) {
     for (int i = 1; i < Size; ++i) {
         t_symbol temp = mas[i];
         int j = i-1;
@@ -11,7 +11,7 @@ void InsertionSort(t_symbol* mas, int Size) {
     }
 }
 
-void ReadFile(FILE* fo, t_symbol* mas) {
+void read_file(FILE* fo, t_symbol* mas) {
     int symbol;
     symbol = fgetc(fo);
     while (symbol != EOF) {
@@ -37,13 +37,13 @@ int main(void) {
     }
 
     //Fill array
-    ReadFile(f, symbols);
+    read_file(f, symbols);
 
     if (fclose(f) == EOF)
         printf("The file did not close.\n");
 
     //Sorting
-    InsertionSort(symbols, 256);
+    insertion_sort(symbols, 256);
 
     //Output on display
     printf("Most unpopular char - \n");

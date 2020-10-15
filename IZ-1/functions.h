@@ -8,7 +8,7 @@ typedef struct t_symbol {
     int count;
 } t_symbol;
 
-void InsertionSort(t_symbol* mas, int Size);
-void ReadFile(FILE* fo, t_symbol* mas);
+void insertion_sort(t_symbol* mas, const int Size);
+void read_file(FILE* fo, t_symbol* mas);
 
 #endif //FUNCTIONS_H
