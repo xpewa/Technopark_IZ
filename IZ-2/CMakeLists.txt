@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.16)
-project(IZ_2 C)
+cmake_minimum_required(VERSION 3.9)
+project(IZ_2 C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
