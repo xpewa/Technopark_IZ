@@ -1,0 +1,27 @@
+dist:     trusty
+
+language: cpp
+
+os:
+  - linux
+
+compiler:
+  - gcc
+
+env:
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+
+install:
+  - sudo apt-get install cppcheck
+  - sudo apt-get -qq update
+  - sudo apt-get install -y cmake
+
+script:
+  - cd IZ-2
+  - cppcheck *.c
+  - mkdir build
+  - cd build
+  - cmake ../
