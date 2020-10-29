@@ -17,7 +17,7 @@ env:
 install:
   - sudo apt-get install cppcheck
   - sudo apt-get -qq update
-  - sudo apt-get install -y valgrind cmake
+  - sudo apt-get install -y cmake
 
 script:
   - cd IZ-2
@@ -25,4 +25,3 @@ script:
   - mkdir build
   - cd build
   - cmake ../
-  - valgrind *.c
